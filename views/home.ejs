@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Generator</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>QR Generator</h1>
+        <form action="/submit" method="post">
+            <label for="linkInput">Enter Link:</label>
+            <input id="linkInput" name="url" type="text" class="feedback-input"
+                placeholder="Enter the URL of your choice" />
+            <input type="submit" value="SUBMIT" />
+            <label for="imageInput">Your QR:</label>
+            <% if(locals.new_qr_exists){ %>
+                <img src="/new_qr.png" class="canvas" alt="Image" width="200" height="200">
+                <% }else {%>
+                    <img src="/123.jpg" alt="Image" width="200" height="200">
+                    <% } %>
+                        <label for="imageInput"></label>
+                        <a href="/new_qr.png" download="new_qr.png"><button type="button"
+                                class="downbtn">Download QR</button></a>
+
+        </form>
+    </div>
+</body>
+
+</html>
